@@ -29,4 +29,10 @@ export class UserController {
         const users = this.userService.getAllUsers()
         return response.status(200).json( users )
     } 
+
+    deleteUser = (request: Request, response: Response): Response => {
+        const user = request.body
+        this.userService.deleteUser(user)
+        return response.status(200).json({ message: 'Usuário deletado'})
+    }
 }

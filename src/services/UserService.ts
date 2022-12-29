@@ -32,5 +32,13 @@ export class UserService {
     getAllUsers = () => {
         return this.db
     }
+
+    deleteUser = (user: User) => {
+        const index = this.db.indexOf(user);
+        if (index > -1) {
+            this.db.splice(index, 1);
+        }
+        console.log('Usuário deletado', this.db)
+    }
 }
 
